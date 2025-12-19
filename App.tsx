@@ -118,7 +118,8 @@ Arrange these elements in a balanced grid or a flowing journey map layout. Ensur
               {section.id === 'mechanism' && (
                 <div className="flex flex-col gap-8 mt-8">
                   <MechanismVisual />
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Changed from grid to flex-col to stack vertically on all screens */}
+                  <div className="flex flex-col gap-6">
                     <AnxietyCycleDiagram />
                     <TraitRadarChart />
                   </div>
