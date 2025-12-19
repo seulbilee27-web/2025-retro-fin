@@ -8,7 +8,7 @@ const SectionGraphic: React.FC<GraphicProps> = ({ id }) => {
   // Initialize 'intro' with the specific URL provided
   const [currentImage] = useState<string | null>(
     id === 'intro' 
-      ? "https://sgimage.netmarble.com/images/netmarble/COMMON/20251219/dkmf1766119473186.PNG" 
+      ? "https://sgimage.netmarble.com/images/netmarble/COMMON/20251219/toc21766124117682.PNG" 
       : null
   );
 
