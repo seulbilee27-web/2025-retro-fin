@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { SECTIONS, INTRO_TEXT } from './constants';
 import Section from './components/Section';
+import SectionGraphic from './components/SectionGraphics';
 import { TraitRadarChart, AnxietyCycleDiagram, MechanismVisual, MorningRoutineVisual } from './components/Charts';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [viewMode, setViewMode] = useState<'detail' | 'simple'>('detail');
+  const [viewMode, setViewMode] = useState<'detail' | 'simple'>('simple');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,6 +69,11 @@ Arrange these elements in a balanced grid or a flowing journey map layout. Ensur
           <p className="font-essay text-lg md:text-xl text-stone-600 leading-loose whitespace-pre-line mb-10">
             {INTRO_TEXT}
           </p>
+
+          {/* Intro Graphic (New) */}
+          <div className="mb-10">
+            <SectionGraphic id="intro" />
+          </div>
 
           {/* View Mode Tabs */}
           <div className="flex justify-center">
