@@ -16,36 +16,11 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleCopyPrompt = () => {
-    const prompt = `
-Please create a comprehensive, single-page infographic or illustration summarizing a "2025 Personal Retrospective".
-
-**Visual Style & Tone:**
-- **Background:** Warm Ivory (#FDFCF8) to match the website.
-- **Color Palette:** Sage Green (#84A98C), Warm Wood (#8D7B68), Stone Gray (#57534E).
-- **Mood:** Honest, warm, clean, organized, calm, and sincere. Avoid overly corporate or chaotic styles.
-- **Style:** Hand-drawn line art mixed with flat design elements. High readability.
-
-**Content to Visualize (Organize this into a cohesive layout):**
-
-1. **Title:** "2025 Retrospective: A Journey of Finding Myself"
-2. **Core Message:** ${INTRO_TEXT.replace(/\n/g, ' ')}
-
-3. **Key Sections (Visualize these with icons and brief keywords):**
-${SECTIONS.map(s => `   - **${s.title}**: ${s.subtitle}. Keywords: ${s.tags.join(', ')}. Content summary: ${s.content[0].substring(0, 50)}...`).join('\n')}
-
-4. **Data Visualizations to Include:**
-   - **Morning Routine Cycle:** Brushing -> Warm Water -> Yoga/Stretching.
-   - **Mechanism Diagram:** A shift from "Shadow (Anxiety, Defensive)" to "Light (Sensitivity, Responsibility)".
-   - **Energy Radar Chart:** High Sensitivity & Responsibility, lower Rest.
-   - **Anxiety Loop:** Breaking the loop of "Trigger -> Anxiety -> Over-responsibility" and moving to "Pause -> Safety -> Boundaries".
-
-**Composition:**
-Arrange these elements in a balanced grid or a flowing journey map layout. Ensure the text is legible and the overall feeling is one of "calm achievement" and "warm encouragement".
-    `;
-
-    navigator.clipboard.writeText(prompt.trim());
-    alert("이미지 생성용 프롬프트가 복사되었습니다! \nGemini 입력창에 붙여넣기(Ctrl+V) 하세요.");
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -58,7 +33,7 @@ Arrange these elements in a balanced grid or a flowing journey map layout. Ensur
         </div>
       </header>
 
-      <main className="pt-24 pb-20">
+      <main className="pt-24 pb-12">
         {/* Intro Section */}
         <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
           <div className="w-16 h-1 bg-sage-500 mb-8 rounded-full"></div>
@@ -133,6 +108,17 @@ Arrange these elements in a balanced grid or a flowing journey map layout. Ensur
             </Section>
           );
         })}
+
+        {/* Scroll To Top Button (Placed after content) */}
+        <div className="max-w-3xl mx-auto px-6 mt-8 flex justify-end">
+          <button
+            onClick={scrollToTop}
+            className="px-5 py-2.5 bg-white border border-stone-200 text-stone-500 rounded-xl shadow-sm hover:bg-stone-50 hover:text-sage-700 hover:border-sage-200 transition-all text-sm font-medium flex items-center gap-2"
+          >
+            <span>▲</span>
+            <span>맨 위로</span>
+          </button>
+        </div>
       </main>
 
       {/* Footer */}
@@ -147,17 +133,10 @@ Arrange these elements in a balanced grid or a flowing journey map layout. Ensur
             <span>🏡</span>
             <span>🤖</span>
           </div>
-          <div className="text-xs text-stone-400 space-y-2 mb-6">
+          <div className="text-xs text-stone-400 space-y-2">
             <p>2025 Personal Retrospective</p>
             <p>Designed with Honesty & Warmth</p>
           </div>
-          
-          <button 
-            onClick={handleCopyPrompt}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-stone-200 rounded-full text-xs font-medium text-stone-500 hover:text-sage-600 hover:border-sage-300 transition-colors shadow-sm"
-          >
-            ✨ 이미지 생성용 프롬프트 복사
-          </button>
         </div>
       </footer>
     </div>

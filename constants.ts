@@ -135,7 +135,7 @@ export const SECTIONS: ContentSection[] = [
   },
   {
     id: 'next',
-    title: '내일을 위한 다짐',
+    title: '2026년에는',
     subtitle: '현실적인 목표와 설레는 도전',
     tags: ['🤖 AI 대시보드', '👨‍👩‍👧‍👦 가족 회의', '🍎 건강한 방어'],
     content: [
