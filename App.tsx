@@ -38,14 +38,14 @@ const App: React.FC = () => {
         <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
           <div className="w-16 h-1 bg-sage-500 mb-8 rounded-full"></div>
           <h2 className="text-2xl md:text-3xl font-serif text-stone-800 mb-6 leading-tight">
-            조금 서툴러도 괜찮은,<br/>
+            조금 서툴러도 괜찮아,<br/>
             나를 찾아가는 여정
           </h2>
           <p className="font-essay text-lg md:text-xl text-stone-600 leading-loose whitespace-pre-line mb-10">
             {INTRO_TEXT}
           </p>
 
-          {/* Intro Graphic (New) */}
+          {/* Intro Graphic */}
           <div className="mb-10">
             <SectionGraphic id="intro" />
           </div>
@@ -109,7 +109,7 @@ const App: React.FC = () => {
           );
         })}
 
-        {/* Scroll To Top Button (Placed after content) */}
+        {/* Scroll To Top Button */}
         <div className="max-w-3xl mx-auto px-6 mt-8 flex justify-end">
           <button
             onClick={scrollToTop}
@@ -125,8 +125,8 @@ const App: React.FC = () => {
       <footer className="bg-stone-100 py-16 border-t border-stone-200">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="font-serif text-stone-600 text-lg mb-6 leading-relaxed">
-            "2025년, 나를 지키며 치열하게 살아낸 자신이 자랑스러워.<br className="hidden md:block" />
-            내년에도 나만의 속도로 걸어갈 나를 온 마음으로 응원해."
+            "2025년, 나를 지키며 치열하게 살아낸 내가 자랑스러워.<br className="hidden md:block" />
+            내년에도 나만의 속도로 걸어갈 나를 온 마음으로 응원할게."
           </p>
           <div className="flex justify-center gap-4 text-2xl mb-8 opacity-70">
             <span>🌱</span>

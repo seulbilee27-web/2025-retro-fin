@@ -9,11 +9,11 @@ import {
 } from 'recharts';
 
 const traitData = [
-  { subject: '섬세함 (Sensitivity)', A: 95, fullMark: 100 },
-  { subject: '책임감 (Responsibility)', A: 90, fullMark: 100 },
-  { subject: '행동력 (Action)', A: 85, fullMark: 100 },
-  { subject: '회복탄력성 (Resilience)', A: 60, fullMark: 100 },
-  { subject: '휴식 (Rest)', A: 50, fullMark: 100 },
+  { subject: '섬세함', A: 95, fullMark: 100 },
+  { subject: '완결성', A: 90, fullMark: 100 },
+  { subject: '행동력', A: 85, fullMark: 100 },
+  { subject: '회복탄력성', A: 60, fullMark: 100 },
+  { subject: '휴식', A: 50, fullMark: 100 },
 ];
 
 export const TraitRadarChart: React.FC = () => {
@@ -75,7 +75,7 @@ export const MorningRoutineVisual: React.FC = () => {
         </div>
       </div>
       <p className="text-center text-xs text-stone-400 mt-6">
-        이 루틴이 무너지면, 마음의 경보가 울려.
+        이 루틴이 무너지면, 내 마음의 경보가 울려
       </p>
     </div>
   );
@@ -94,11 +94,11 @@ export const MechanismVisual: React.FC = () => {
         <ul className="space-y-3">
           <li className="flex gap-3 text-sm text-stone-600">
             <span className="text-red-400 shrink-0">⚠️</span>
-            <span><strong>타인의 시선:</strong> 내 판단보다 남의 평가를 진실로 믿음</span>
+            <span><strong>타인의 시선:</strong> 내 판단보다 남의 평가를 더 믿음</span>
           </li>
           <li className="flex gap-3 text-sm text-stone-600">
             <span className="text-red-400 shrink-0">🤐</span>
-            <span><strong>감정 억압:</strong> "괜찮아"라며 참다가 임계치에서 폭발</span>
+            <span><strong>감정 억압:</strong> 괜찮다며 참다가 한계점에서 폭발함</span>
           </li>
           <li className="flex gap-3 text-sm text-stone-600">
             <span className="text-red-400 shrink-0">🔥</span>
@@ -121,11 +121,11 @@ export const MechanismVisual: React.FC = () => {
           </li>
           <li className="flex gap-3 text-sm text-stone-700">
             <span className="text-sage-500 shrink-0">🛑</span>
-            <span><strong>멈춤의 미학:</strong> 조급할 때가 바로 멈춰야 할 때</span>
+            <span><strong>멈춤의 연습:</strong> 조급함이 들 때가 바로 멈춰야 할 때</span>
           </li>
           <li className="flex gap-3 text-sm text-stone-700">
             <span className="text-sage-500 shrink-0">🛡️</span>
-            <span><strong>책임 분리:</strong> 타인의 감정은 나의 책임이 아님</span>
+            <span><strong>경계 세우기:</strong> 타인의 감정은 내 책임이 아님을 인지</span>
           </li>
         </ul>
       </div>
@@ -147,7 +147,7 @@ export const AnxietyCycleDiagram: React.FC = () => {
           <div>
             <div className="text-xs text-stone-400 font-bold mb-1 tracking-wider">TRIGGER</div>
             <div className="p-3 bg-stone-50 rounded-lg border border-stone-100 text-sm text-stone-700">
-              <strong>불안 감지</strong> (누군가의 침묵, 계획 변경, 거절의 두려움)
+              <strong>불안 감지</strong> (침묵, 계획 변경, 거절의 두려움)
             </div>
           </div>
         </div>
@@ -163,9 +163,9 @@ export const AnxietyCycleDiagram: React.FC = () => {
           <div className="flex-1">
             <div className="text-xs text-stone-400 font-bold mb-1 tracking-wider">OLD WAY</div>
             <div className="p-3 bg-stone-50 rounded-lg border border-stone-100 text-sm text-stone-500">
-              <span className="line-through">즉각적 행동 & 과도한 책임</span>
+              <span className="line-through">즉각적 반응과 과도한 책임</span>
               <br/>
-              <span className="text-xs">→ 번아웃 & 폭발 (조건부 평온)</span>
+              <span className="text-xs">→ 번아웃과 감정의 폭발</span>
             </div>
           </div>
         </div>
@@ -178,11 +178,11 @@ export const AnxietyCycleDiagram: React.FC = () => {
           <div className="flex-1">
             <div className="text-xs text-sage-600 font-bold mb-1 tracking-wider">NEW WAY</div>
             <div className="p-4 bg-sage-50 rounded-lg border border-sage-200 text-sm text-stone-800 shadow-sm">
-              <strong>1. 멈춤 & 인지</strong> ("나는 안전하다")
+              <strong>1. 멈춤과 인지</strong> ("지금은 안전해")
               <br/>
-              <strong>2. 책임 분리</strong> (타인의 감정은 그들의 몫)
+              <strong>2. 책임의 분리</strong> (상대 감정은 상대의 몫)
               <br/>
-              <strong>3. 안전한 실패</strong> (거절해도 괜찮다)
+              <strong>3. 건강한 경계</strong> (거절해도 괜찮음을 연습)
             </div>
           </div>
         </div>
