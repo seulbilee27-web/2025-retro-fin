@@ -75,7 +75,7 @@ export const MorningRoutineVisual: React.FC = () => {
         </div>
       </div>
       <p className="text-center text-xs text-stone-400 mt-6">
-        이 루틴이 무너지면, 마음의 경보가 울립니다.
+        이 루틴이 무너지면, 마음의 경보가 울려.
       </p>
     </div>
   );
@@ -83,7 +83,7 @@ export const MorningRoutineVisual: React.FC = () => {
 
 export const MechanismVisual: React.FC = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+    <div className="flex flex-col gap-6 w-full">
       {/* Shadow Card */}
       <div className="bg-stone-50 rounded-2xl p-6 border border-stone-200 relative overflow-hidden">
         <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl">🌑</div>

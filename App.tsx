@@ -107,18 +107,17 @@ Arrange these elements in a balanced grid or a flowing journey map layout. Ensur
               isLast={index === SECTIONS.length - 1}
               viewMode={viewMode}
             >
-              {/* Inject visuals based on section ID */}
+              {/* Inject visuals based on section ID and viewMode */}
               
-              {section.id === 'self' && (
+              {section.id === 'self' && viewMode === 'detail' && (
                 <div className="mt-8">
                   <MorningRoutineVisual />
                 </div>
               )}
 
-              {section.id === 'mechanism' && (
+              {section.id === 'mechanism' && viewMode === 'detail' && (
                 <div className="flex flex-col gap-8 mt-8">
                   <MechanismVisual />
-                  {/* Changed from grid to flex-col to stack vertically on all screens */}
                   <div className="flex flex-col gap-6">
                     <AnxietyCycleDiagram />
                     <TraitRadarChart />
@@ -134,8 +133,8 @@ Arrange these elements in a balanced grid or a flowing journey map layout. Ensur
       <footer className="bg-stone-100 py-16 border-t border-stone-200">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="font-serif text-stone-600 text-lg mb-6 leading-relaxed">
-            "2025년, 나를 지키며 치열하게 살아낸 자신이 자랑스럽습니다.<br className="hidden md:block" />
-            내년에도 나만의 속도로 걸어갈 저를 온 마음으로 응원합니다."
+            "2025년, 나를 지키며 치열하게 살아낸 자신이 자랑스러워.<br className="hidden md:block" />
+            내년에도 나만의 속도로 걸어갈 나를 온 마음으로 응원해."
           </p>
           <div className="flex justify-center gap-4 text-2xl mb-8 opacity-70">
             <span>🌱</span>
