@@ -5,6 +5,7 @@ interface SectionProps {
   data: ContentSection;
   children?: React.ReactNode;
   isLast?: boolean;
+  viewMode: 'detail' | 'simple';
 }
 
 const formatText = (text: string) => {
@@ -38,7 +39,7 @@ const formatText = (text: string) => {
   });
 };
 
-const Section: React.FC<SectionProps> = ({ data, children, isLast }) => {
+const Section: React.FC<SectionProps> = ({ data, children, isLast, viewMode }) => {
   return (
     <section className={`py-12 md:py-20 px-6 max-w-3xl mx-auto ${!isLast ? 'border-b border-stone-200' : ''}`}>
       <div className="mb-8">
@@ -60,10 +61,30 @@ const Section: React.FC<SectionProps> = ({ data, children, isLast }) => {
         </p>
       </div>
 
-      <div className="space-y-6 text-stone-700 font-essay text-base md:text-lg leading-relaxed">
-        {data.content.map((paragraph, index) => (
-          <p key={index}>{formatText(paragraph)}</p>
-        ))}
+      <div className="transition-all duration-500 ease-in-out">
+        {viewMode === 'detail' ? (
+          <div className="space-y-6 text-stone-700 font-essay text-base md:text-lg leading-relaxed animate-fade-in">
+            {data.content.map((paragraph, index) => (
+              <p key={index}>{formatText(paragraph)}</p>
+            ))}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 gap-4 animate-fade-in-up">
+            {data.summary.map((item, index) => (
+              <div 
+                key={index} 
+                className="group flex items-start gap-4 bg-white p-5 rounded-xl border border-stone-100 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-sage-200"
+              >
+                <div className="w-12 h-12 rounded-full bg-stone-50 group-hover:bg-sage-50 border border-stone-100 group-hover:border-sage-100 flex items-center justify-center text-2xl shrink-0 transition-colors duration-300">
+                  {item.icon}
+                </div>
+                <div className="text-stone-700 font-sans leading-relaxed pt-1">
+                  {formatText(item.text)}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {children && (
